@@ -129,9 +129,9 @@ func _on_js_get_catalog_then(args):
 		_get_catalog_callback = null
 
 func _on_js_get_catalog_catch(args):
-	if _js_get_catalog_catch != null:
-		_js_get_catalog_catch.call_func(false, [])
-		_js_get_catalog_catch = null
+	if _get_catalog_callback != null:
+		_get_catalog_callback.call_func(false, [])
+		_get_catalog_callback = null
 
 func _on_js_get_purchases_then(args):
 	if _get_purchases_callback != null:
@@ -154,6 +154,6 @@ func _on_js_get_purchases_then(args):
 		_get_purchases_callback = null
 
 func _on_js_get_purchases_catch(args):
-	if _js_get_catalog_catch != null:
-		_js_get_catalog_catch.call_func(false, [])
-		_js_get_catalog_catch = null
+	if _get_purchases_callback != null:
+		_get_purchases_callback.call_func(false, [])
+		_get_purchases_callback = null
