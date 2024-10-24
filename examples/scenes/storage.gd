@@ -45,7 +45,7 @@ func _on_storage_get_completed(success, data):
 			print("Level ID is null")
 		
 		if data[2] != null:
-			is_tutorial_completed_checkbox.pressed = data[2]
+			is_tutorial_completed_checkbox.pressed = data[2].to_lower() == "true"
 		else:
 			is_tutorial_completed_checkbox.pressed = false
 			print("Is Tutorial Completed is null")
