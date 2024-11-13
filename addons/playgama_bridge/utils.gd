@@ -41,5 +41,8 @@ func convert_to_js(data):
 		
 		TYPE_INT:
 			return data
+		
+		TYPE_REAL:
+			return data
 	
 	return null
