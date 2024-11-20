@@ -69,9 +69,9 @@ func _export_end():
 		y8_game_id = ProjectSettings.get(SETTINGS_PATH + SETTINGS_Y8_GAME_ID_KEY)
 
 	if ProjectSettings.has_setting(SETTINGS_PATH + SETTINGS_Y8_HOST_ID_KEY):
-		y8_host_id = ProjectSettings.get(SETTINGS_PATH + SETTINGS_Y8_GAME_ID_KEY)
+		y8_host_id = ProjectSettings.get(SETTINGS_PATH + SETTINGS_Y8_HOST_ID_KEY)
 
-	if ProjectSettings.has_setting(SETTINGS_PATH + SETTINGS_Y8_GAME_ID_KEY):
+	if ProjectSettings.has_setting(SETTINGS_PATH + SETTINGS_Y8_ADSENSE_ID_KEY):
 		y8_adsense_id = ProjectSettings.get(SETTINGS_PATH + SETTINGS_Y8_ADSENSE_ID_KEY)
 
 	if ProjectSettings.has_setting(SETTINGS_PATH + SETTINGS_LAGGED_DEV_ID_KEY):
