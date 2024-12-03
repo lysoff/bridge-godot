@@ -31,8 +31,10 @@ func _on_purchase_completed(success, purchase):
 	if purchase != null:
 		match Bridge.platform.id:
 			"yandex":
+				print("Purchase ID: " + str(purchase.productID))
 				print("Purchase Token: " + str(purchase.purchaseToken))
 			"facebook":
+				print("Purchase ID: " + str(purchase.productID))
 				print("Purchase Token: " + str(purchase.purchaseToken))
 
 
