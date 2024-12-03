@@ -59,6 +59,7 @@ var advertisement setget , _advertisement_getter
 var social setget , _social_getter
 var leaderboard setget , _leaderboard_getter
 var payments setget , _payments_getter
+var achievements setget , _achievements_getter
 var remote_config setget , _remote_config_getter
 
 
@@ -89,6 +90,9 @@ func _leaderboard_getter():
 func _payments_getter():
 	return _payments
 
+func _achievements_getter():
+	return _achievements
+
 func _remote_config_getter():
 	return _remote_config
 
@@ -101,6 +105,7 @@ var _advertisement = null
 var _social = null
 var _leaderboard = null
 var _payments = null
+var _achievements = null
 var _remote_config = null
 
 
@@ -116,6 +121,7 @@ func _ready():
 		_social = load("res://addons/playgama_bridge/modules/social/social.gd").new(js_bridge.social)
 		_leaderboard = load("res://addons/playgama_bridge/modules/leaderboard/leaderboard.gd").new(js_bridge.leaderboard)
 		_payments = load("res://addons/playgama_bridge/modules/payments/payments.gd").new(js_bridge.payments)
+		_achievements = load("res://addons/playgama_bridge/modules/achievements/achievements.gd").new(js_bridge.achievements)
 		_remote_config = load("res://addons/playgama_bridge/modules/remote_config/remote_config.gd").new(js_bridge.remoteConfig)
 	else:
 		_platform = load("res://addons/playgama_bridge/modules/platform/platform_editor_mock.gd").new()
@@ -127,4 +133,5 @@ func _ready():
 		_social = load("res://addons/playgama_bridge/modules/social/social_editor_mock.gd").new()
 		_leaderboard = load("res://addons/playgama_bridge/modules/leaderboard/leaderboard_editor_mock.gd").new()
 		_payments = load("res://addons/playgama_bridge/modules/payments/payments_editor_mock.gd").new()
+		_achievements = load("res://addons/playgama_bridge/modules/achievements/achievements_editor_mock.gd").new()
 		_remote_config = load("res://addons/playgama_bridge/modules/remote_config/remote_config_editor_mock.gd").new()
