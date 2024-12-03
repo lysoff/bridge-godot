@@ -91,8 +91,8 @@ func _on_js_purchase_then(args):
 		var data_type = typeof(data)
 		match data_type:
 			TYPE_OBJECT:
-				var item = _utils.convert_to_gd_object(data)
-				_purchase_callback.call_func(true, item)
+				var details = _utils.convert_to_gd_object(data)
+				_purchase_callback.call_func(true, details)
 			_:
 				_purchase_callback.call_func(false, null)
 		_purchase_callback = null
