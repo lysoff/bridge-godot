@@ -40,23 +40,31 @@ func unlock(options = null, callback = null):
 		.then(_js_unlock_then) \
 		.catch(_js_unlock_catch)
 
-func get_list(callback = null):
+func get_list(options = null, callback = null):
 	if _get_list_callback != null:
 		return
 
 	_get_list_callback = callback
+	
+	var js_options = null
+	if options:
+		js_options = _utils.convert_to_js(options)
 
-	_js_achievements.getList() \
+	_js_achievements.getList(js_options) \
 		.then(_js_get_list_then) \
 		.catch(_js_get_list_catch)
 
-func show_native_popup(callback = null):
+func show_native_popup(options = null, callback = null):
 	if _show_native_popup_callback != null:
 		return
 
 	_show_native_popup_callback = callback
+	
+	var js_options = null
+	if options:
+		js_options = _utils.convert_to_js(options)
 
-	_js_achievements.showNativePopup() \
+	_js_achievements.showNativePopup(js_options) \
 		.then(_js_show_native_popup_then) \
 		.catch(_js_show_native_popup_catch)
 

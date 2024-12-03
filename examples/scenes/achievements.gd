@@ -37,7 +37,9 @@ func _on_unlock_completed(success):
 
 
 func _on_get_list_button_pressed():
-	Bridge.achievements.get_list(funcref(self, "_on_get_list_completed"))
+	var options
+	
+	Bridge.achievements.get_list(options, funcref(self, "_on_get_list_completed"))
 	
 func _on_get_list_completed(success, list):
 	print(success)
@@ -63,7 +65,9 @@ func _on_get_list_completed(success, list):
 
 
 func _on_show_native_popup_button_pressed():
-	Bridge.achievements.show_native_popup(funcref(self, "_on_show_native_popup_completed"))
+	var options
+	
+	Bridge.achievements.show_native_popup(options, funcref(self, "_on_show_native_popup_completed"))
 	
 func _on_show_native_popup_completed(success):
 	print(success)
