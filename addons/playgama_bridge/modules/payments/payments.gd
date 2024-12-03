@@ -87,7 +87,14 @@ func _init(js_payments):
 
 func _on_js_purchase_then(args):
 	if _purchase_callback != null:
-		_purchase_callback.call_func(true)
+		var data = args[0]
+		var data_type = typeof(data)
+		match data_type:
+			TYPE_OBJECT:
+				var item = _utils.convert_to_gd_object(data)
+				_purchase_callback.call_func(true, item)
+			_:
+				_purchase_callback.call_func(false, null)
 		_purchase_callback = null
 
 func _on_js_purchase_catch(args):
@@ -113,12 +120,7 @@ func _on_js_get_catalog_then(args):
 			TYPE_OBJECT:
 				var array = []
 				for i in range(data.length):
-					var js_item = data[i]
-					var js_item_keys = JavaScript.get_interface("Object").keys(js_item)
-					var item = {}
-					for j in range(js_item_keys.length):
-						var key = js_item_keys[j]
-						item[key] = js_item[key]
+					var item = _utils.convert_to_gd_object(data[i])
 					array.append(item)
 				_get_catalog_callback.call_func(true, array)
 			_:
