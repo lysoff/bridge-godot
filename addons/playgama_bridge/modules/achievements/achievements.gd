@@ -114,5 +114,5 @@ func _on_js_show_native_popup_then(args):
 
 func _on_js_show_native_popup_catch(args):
 	if _show_native_popup_callback != null:
-		_show_native_popup_callback.call_func(false, [])
+		_show_native_popup_callback.call_func(false)
 		_show_native_popup_callback = null
